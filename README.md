@@ -1,2 +1,3 @@
-# cat-coven
+# Cat Coven
+
 Cats and their coven activities.
