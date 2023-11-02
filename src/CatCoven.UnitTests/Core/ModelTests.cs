@@ -5,6 +5,6 @@
 namespace CatCoven.UnitTests.Core;
 
 [TestClass]
-public class ModelsTests
+public class ModelTests
 {
 }
