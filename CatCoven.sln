@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.Core", "src\CatCoven.Core\CatCoven.Core.csproj", "{45EAA51A-9B0D-42CD-A8E0-B5A86EF48A2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.UnitTests", "src\CatCoven.UnitTests\CatCoven.UnitTests.csproj", "{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45EAA51A-9B0D-42CD-A8E0-B5A86EF48A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45EAA51A-9B0D-42CD-A8E0-B5A86EF48A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45EAA51A-9B0D-42CD-A8E0-B5A86EF48A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45EAA51A-9B0D-42CD-A8E0-B5A86EF48A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {603C7289-E489-4015-B60C-BBF0AFC909C9}
+	EndGlobalSection
+EndGlobal

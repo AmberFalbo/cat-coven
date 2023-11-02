@@ -1,0 +1,9 @@
+# top-most EditorConfig file
+root = true
+
+[*.{cs,vb}]
+# Insert a file header at the top of the file, replacing any existing file header.
+file_header_template =------------------------------------\nCat Coven API\n------------------------------------
+
+# Remove unused using directives
+dotnet_diagnostic.IDE0005.severity = warning
