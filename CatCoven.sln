@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.Core", "src\CatCov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.UnitTests", "src\CatCoven.UnitTests\CatCoven.UnitTests.csproj", "{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.FunctionalTests", "src\CatCoven.FunctionalTests\CatCoven.FunctionalTests.csproj", "{DEECD082-F870-456C-89EA-2794AC1A98B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
