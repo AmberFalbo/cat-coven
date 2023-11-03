@@ -1,0 +1,23 @@
+@startuml Materials Service ERD
+    class Wizard {
+        +Guid Id
+        +string Name
+        +string FlavorText
+    }
+
+    class Reagent {
+        +Guid Id
+        +string Name
+        +int Quantity
+        +string FlavorText
+    }
+
+    class Cache {
+        +Guid Id
+        +string Name
+        Reagent[] Reagents
+    }
+
+    Wizard "1" -- "1" Cache : has >
+    Cache "1" /-- "*" Reagent : contains >
+@enduml
