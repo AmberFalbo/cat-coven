@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/src/CatCoven.KittenCharmSpells/Migrations
+/src/CatCoven.MewMewMaterials/Migrations
+/src/CatCoven.PurrfectPotions/Migrations
