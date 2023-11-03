@@ -3,8 +3,14 @@
 // ------------------------------------
 
 using CatCoven.MewMewMaterials;
+using CatCoven.MewMewMaterials.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("MaterialsContextDatabase");
+builder.Services.AddDbContext<MaterialsDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddGrpc();

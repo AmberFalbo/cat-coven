@@ -3,8 +3,14 @@
 // ------------------------------------
 
 using CatCoven.KittenCharmSpells;
+using CatCoven.KittenCharmSpells.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("SpellsContextDatabase");
+builder.Services.AddDbContext<SpellsDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddGrpc();

@@ -3,8 +3,14 @@
 // ------------------------------------
 
 using CatCoven.PurrfectPotions;
+using CatCoven.PurrfectPotions.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("PotionsContextDatabase");
+builder.Services.AddDbContext<PotionsDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddGrpc();
