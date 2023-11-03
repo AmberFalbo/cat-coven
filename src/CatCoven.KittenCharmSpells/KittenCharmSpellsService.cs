@@ -2,9 +2,9 @@
 // Cat Coven API
 // ------------------------------------
 
-namespace CatCoven.Core.Configuration
+namespace CatCoven.KittenCharmSpells
 {
-    public interface IServiceConfiguration
+    public class KittenCharmSpellsService
     {
     }
 }

@@ -18,6 +18,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CatCoven.Core\CatCoven.Core.csproj" />
+    <ProjectReference Include="..\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.csproj" />
+    <ProjectReference Include="..\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.csproj" />
+    <ProjectReference Include="..\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.csproj" />
   </ItemGroup>
 
 </Project>

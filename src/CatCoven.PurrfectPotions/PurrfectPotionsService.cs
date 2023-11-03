@@ -2,9 +2,9 @@
 // Cat Coven API
 // ------------------------------------
 
-namespace CatCoven.Core.Configuration
+namespace CatCoven.PurrfectPotions
 {
-    public interface IServiceConfiguration
+    public class PurrfectPotionsService
     {
     }
 }
