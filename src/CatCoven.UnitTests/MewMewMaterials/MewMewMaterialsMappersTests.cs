@@ -2,10 +2,10 @@
 // Cat Coven API
 // ------------------------------------
 
-namespace CatCoven.UnitTests.Core
+namespace CatCoven.UnitTests.MewMewMaterials
 {
     [TestClass]
-    public class ModelTests
+    public class MewMewMaterialsMappersTests
     {
     }
 }
