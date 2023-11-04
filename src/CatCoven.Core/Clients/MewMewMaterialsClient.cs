@@ -11,12 +11,12 @@ namespace CatCoven.Core.Clients
 {
     public class MewMewMaterialsClient : IMewMewMaterialsClient
     {
-        private readonly IMewMewMaterialsService _mewMewMaterialsService;
+        private readonly IMewMewMaterialsService _client;
 
         public MewMewMaterialsClient()
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7064");
-            _mewMewMaterialsService = channel.CreateGrpcService<IMewMewMaterialsService>();
+            _client = channel.CreateGrpcService<IMewMewMaterialsService>();
         }
 
         public Task<Cache> AddMaterials(List<Reagent> reagents)

@@ -25,6 +25,8 @@
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="MewMewMaterials\" />
+    <Folder Include="KittyCharmSpells\" />
+    <Folder Include="PurrfectPotions\" />
   </ItemGroup>
 
 </Project>
