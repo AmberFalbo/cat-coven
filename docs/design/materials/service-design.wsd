@@ -61,4 +61,28 @@ else #FFA6A6 failure
     MewMewMaterielsClient -> Client : failure
 end
 
+==Update Cache==
+
+Client -> MewMewMaterielsClient : UpdateCache(cache)
+MewMewMaterielsClient -> MewMewMaterialsService : UpdateCache(requestContract)
+alt
+    MewMewMaterialsService -> MewMewMaterialsProcessor : UpdateCache(cache)
+    MewMewMaterialsProcessor -> MewMewMaterialsRepository : UpdateCache(cache)
+    MewMewMaterialsRepository -> Database : cache
+    alt
+        Database -> MewMewMaterialsRepository : success
+        MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
+        MewMewMaterialsProcessor -> MewMewMaterialsService : cache
+        MewMewMaterialsService -> MewMewMaterielsClient : cache
+        MewMewMaterialsClient -> Client : cache
+    else #FFA6A6 failure
+        Database -> MewMewMaterialsRepository : failure
+        MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
+        MewMewMaterialsProcessor -> MewMewMaterialsService : failure
+    end 
+else #FFA6A6 failure
+    MewMewMaterialsService -> MewMewMaterielsClient : failure
+    MewMewMaterielsClient -> Client : failure
+end
+
 @enduml
