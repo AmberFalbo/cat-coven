@@ -2,6 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
+using CatCoven.MewMewMaterials.StorageContracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace CatCoven.MewMewMaterials.Data
@@ -12,6 +13,8 @@ namespace CatCoven.MewMewMaterials.Data
         {
         }
 
-        // public DbSet<Model> Name { get; set; }
+        public DbSet<CacheStorageContract> Caches { get; set; }
+        public DbSet<MeowMageStorageContract> MeowMages { get; set; }
+        public DbSet<ReagentStorageContract> Reagents { get; set; }
     }
 }

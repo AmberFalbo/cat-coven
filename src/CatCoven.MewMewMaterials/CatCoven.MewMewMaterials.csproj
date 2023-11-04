@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="StorageContracts\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CatCoven.Core\CatCoven.Core.csproj" />
   </ItemGroup>
 
