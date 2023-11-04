@@ -15,7 +15,7 @@ namespace CatCoven.Core.Clients
 
         public MewMewMaterialsClient()
         {
-            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var channel = GrpcChannel.ForAddress("https://localhost:7064");
             _mewMewMaterialsService = channel.CreateGrpcService<IMewMewMaterialsService>();
         }
 
