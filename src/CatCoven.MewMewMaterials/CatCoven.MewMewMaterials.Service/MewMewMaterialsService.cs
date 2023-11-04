@@ -2,7 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
-using CatCoven.Core.ServiceContracts.MewMewMaterials;
+using CatCoven.MewMewMaterials.ServiceContracts;
 using ProtoBuf.Grpc;
 
 namespace CatCoven.MewMewMaterials

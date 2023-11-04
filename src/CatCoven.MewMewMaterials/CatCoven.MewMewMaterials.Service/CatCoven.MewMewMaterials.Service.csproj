@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CatCoven.Core\CatCoven.Core.csproj" />
+    <ProjectReference Include="..\CatCoven.MewMewMaterials.ServiceContracts\CatCoven.MewMewMaterials.ServiceContracts.csproj" />
   </ItemGroup>
 
 </Project>
