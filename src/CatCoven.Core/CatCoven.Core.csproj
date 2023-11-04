@@ -13,9 +13,4 @@
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataContracts\" />
-    <Folder Include="Clients\" />
-  </ItemGroup>
-
 </Project>

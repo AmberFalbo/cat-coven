@@ -22,4 +22,9 @@
     <ProjectReference Include="..\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="MewMewMaterials\" />
+  </ItemGroup>
+
 </Project>

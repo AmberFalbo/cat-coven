@@ -37,13 +37,13 @@ else #FFA6A6 failure
     MewMewMaterielsClient -> Client : failure
 end
 
-==Get Materials==
+==Get Cache==
 
-Client -> MewMewMaterielsClient : GetMaterials(reagentsRequest)
-MewMewMaterielsClient -> MewMewMaterialsService : GetMaterials(requestContract)
+Client -> MewMewMaterielsClient : GetCache(reagentsRequest)
+MewMewMaterielsClient -> MewMewMaterialsService : GetCache(requestContract)
 alt
-    MewMewMaterialsService -> MewMewMaterialsProcessor : GetMaterials(reagentsRequest)
-    MewMewMaterialsProcessor -> MewMewMaterialsRepository : GetMaterials(cache id)
+    MewMewMaterialsService -> MewMewMaterialsProcessor : GetCache(reagentsRequest)
+    MewMewMaterialsProcessor -> MewMewMaterialsRepository : GetCache(cache id)
     MewMewMaterialsRepository -> Database : cache id
     alt
         Database -> MewMewMaterialsRepository : success

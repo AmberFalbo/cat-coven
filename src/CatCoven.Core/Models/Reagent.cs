@@ -2,7 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
-namespace CatCoven.MewMewMaterials.Models
+namespace CatCoven.Core.Models
 {
     public class Reagent
     {
