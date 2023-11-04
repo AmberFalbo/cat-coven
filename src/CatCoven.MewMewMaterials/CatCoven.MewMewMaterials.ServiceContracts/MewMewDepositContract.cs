@@ -4,21 +4,18 @@
 
 using ProtoBuf;
 
-namespace CatCoven.Core.ServiceContracts.MewMewMaterials
+namespace CatCoven.MewMewMaterials.ServiceContracts
 {
     [ProtoContract]
-    public class ReagentContract
+    public class MewMewDepositContract
     {
         [ProtoMember(1)]
-        public string Id { get; set; }
+        public string MeowMageId { get; set; }
 
         [ProtoMember(2)]
-        public string Name { get; set; }
+        public string ReagentName { get; set; }
 
         [ProtoMember(3)]
         public int Quantity { get; set; }
-
-        [ProtoMember(4)]
-        public string FlavorText { get; set; }
     }
 }

@@ -5,7 +5,7 @@
 using ProtoBuf.Grpc;
 using ProtoBuf.Grpc.Configuration;
 
-namespace CatCoven.Core.ServiceContracts.MewMewMaterials
+namespace CatCoven.MewMewMaterials.ServiceContracts
 {
     [Service]
     public interface IMewMewMaterialsService

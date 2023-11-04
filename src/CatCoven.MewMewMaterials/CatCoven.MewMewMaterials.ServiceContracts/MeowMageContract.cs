@@ -4,7 +4,7 @@
 
 using ProtoBuf;
 
-namespace CatCoven.Core.ServiceContracts.MewMewMaterials
+namespace CatCoven.MewMewMaterials.ServiceContracts
 {
     [ProtoContract]
     public class MeowMageContract

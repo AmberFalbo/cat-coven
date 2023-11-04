@@ -2,12 +2,12 @@
 // Cat Coven API
 // ------------------------------------
 
-using CatCoven.Core.Models;
-using CatCoven.Core.ServiceContracts.MewMewMaterials;
+using CatCoven.MewMewMaterials.Client.Models;
+using CatCoven.MewMewMaterials.ServiceContracts;
 using Grpc.Net.Client;
 using ProtoBuf.Grpc.Client;
 
-namespace CatCoven.Core.Clients
+namespace CatCoven.MewMewMaterials.Client
 {
     public class MewMewMaterialsClient : IMewMewMaterialsClient
     {

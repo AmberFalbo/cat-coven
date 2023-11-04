@@ -2,9 +2,9 @@
 // Cat Coven API
 // ------------------------------------
 
-using CatCoven.Core.Models;
+using CatCoven.MewMewMaterials.Client.Models;
 
-namespace CatCoven.Core.Clients
+namespace CatCoven.MewMewMaterials.Client
 {
     public interface IMewMewMaterialsClient
     {

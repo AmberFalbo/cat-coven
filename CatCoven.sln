@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.UnitTests", "src\CatCoven.UnitTests\CatCoven.UnitTests.csproj", "{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.KittenCharmSpells.Service", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.Service\CatCoven.KittenCharmSpells.Service.csproj", "{11AE66DF-4E54-42D5-9BC9-F1DCFE47A9BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.FunctionalTests", "src\CatCoven.FunctionalTests\CatCoven.FunctionalTests.csproj", "{DEECD082-F870-456C-89EA-2794AC1A98B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.Service", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.Service\CatCoven.MewMewMaterials.Service.csproj", "{9216A71D-A04D-4256-824E-D08678600E8B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.csproj", "{FE5CA2BB-9283-4526-8B8F-BEE7FA473AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.PurrfectPotions.Service", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.Service\CatCoven.PurrfectPotions.Service.csproj", "{C686A045-9270-48E0-A456-7CED739ECF72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.PurrfectPotions", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.csproj", "{A0726C10-874F-4F2F-B3C7-04B037843E7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.Client", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.Client\CatCoven.MewMewMaterials.Client.csproj", "{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.KittenCharmSpells", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.csproj", "{D0FADA0C-C6B2-4C70-83A7-27A60C975ADA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.Core", "src\CatCoven.Core\CatCoven.Core.csproj", "{DDB74995-3F48-4796-93A4-F2741F330DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.ServiceContracts", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.ServiceContracts\CatCoven.MewMewMaterials.ServiceContracts.csproj", "{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,30 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F02C9258-045A-4BA2-9CC4-49F2FC4BF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DEECD082-F870-456C-89EA-2794AC1A98B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE5CA2BB-9283-4526-8B8F-BEE7FA473AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE5CA2BB-9283-4526-8B8F-BEE7FA473AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE5CA2BB-9283-4526-8B8F-BEE7FA473AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE5CA2BB-9283-4526-8B8F-BEE7FA473AE6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0726C10-874F-4F2F-B3C7-04B037843E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0726C10-874F-4F2F-B3C7-04B037843E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0726C10-874F-4F2F-B3C7-04B037843E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0726C10-874F-4F2F-B3C7-04B037843E7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0FADA0C-C6B2-4C70-83A7-27A60C975ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0FADA0C-C6B2-4C70-83A7-27A60C975ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0FADA0C-C6B2-4C70-83A7-27A60C975ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0FADA0C-C6B2-4C70-83A7-27A60C975ADA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDB74995-3F48-4796-93A4-F2741F330DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDB74995-3F48-4796-93A4-F2741F330DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDB74995-3F48-4796-93A4-F2741F330DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDB74995-3F48-4796-93A4-F2741F330DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AE66DF-4E54-42D5-9BC9-F1DCFE47A9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AE66DF-4E54-42D5-9BC9-F1DCFE47A9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AE66DF-4E54-42D5-9BC9-F1DCFE47A9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AE66DF-4E54-42D5-9BC9-F1DCFE47A9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9216A71D-A04D-4256-824E-D08678600E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9216A71D-A04D-4256-824E-D08678600E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9216A71D-A04D-4256-824E-D08678600E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9216A71D-A04D-4256-824E-D08678600E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C686A045-9270-48E0-A456-7CED739ECF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C686A045-9270-48E0-A456-7CED739ECF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C686A045-9270-48E0-A456-7CED739ECF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C686A045-9270-48E0-A456-7CED739ECF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

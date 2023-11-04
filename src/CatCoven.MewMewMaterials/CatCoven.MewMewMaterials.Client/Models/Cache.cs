@@ -2,7 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
-namespace CatCoven.Core.Models
+namespace CatCoven.MewMewMaterials.Client.Models
 {
     public class Cache
     {
@@ -10,7 +10,7 @@ namespace CatCoven.Core.Models
         public MeowMage MeowMage { get; set; }
         public List<Reagent> Reagents { get; set; }
 
-        public Cache (MeowMage meowMage)
+        public Cache(MeowMage meowMage)
         {
             Id = Guid.NewGuid();
             MeowMage = meowMage;

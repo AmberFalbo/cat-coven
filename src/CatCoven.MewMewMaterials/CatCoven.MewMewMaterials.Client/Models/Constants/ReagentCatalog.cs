@@ -2,9 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
-using System.Drawing;
-
-namespace CatCoven.Core.Models.Constants
+namespace CatCoven.MewMewMaterials.Client.Models.Constants
 {
     public static class ReagentCatalog
     {
