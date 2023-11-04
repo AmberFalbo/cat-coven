@@ -15,5 +15,7 @@ namespace CatCoven.Core.ServiceContracts.MewMewMaterials
         Task<MewMewResponseContract> GetCache(MewMewGetCacheContract request, CallContext context = default);
 
         Task<MewMewResponseContract> UpdateCache(MewMewGetCacheContract request, CallContext context = default);
+
+        Task<bool> ItLives(CallContext context = default);
     }
 }

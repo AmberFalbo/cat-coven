@@ -19,6 +19,11 @@ namespace CatCoven.MewMewMaterials
             throw new NotImplementedException();
         }
 
+        public Task<bool> ItLives(CallContext context = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<MewMewResponseContract> UpdateCache(MewMewGetCacheContract request, CallContext context = default)
         {
             throw new NotImplementedException();

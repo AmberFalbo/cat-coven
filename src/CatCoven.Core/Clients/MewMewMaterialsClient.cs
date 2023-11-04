@@ -27,5 +27,20 @@ namespace CatCoven.Core.Clients
 
             throw new NotImplementedException();
         }
+
+        public Task<Cache> GetCache(Guid meowMageId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ItLives()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Cache> UpdateCache(Cache cache)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
