@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.ServiceContracts", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.ServiceContracts\CatCoven.MewMewMaterials.ServiceContracts.csproj", "{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.UnitTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.UnitTests\CatCoven.MewMewMaterials.UnitTests.csproj", "{B3E6CF3C-556D-4285-A62E-5B59536EF46C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.FunctionalTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.FunctionalTests\CatCoven.MewMewMaterials.FunctionalTests.csproj", "{E70C4481-8E57-4F34-928B-A2FF848F455E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E6CF3C-556D-4285-A62E-5B59536EF46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E6CF3C-556D-4285-A62E-5B59536EF46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E6CF3C-556D-4285-A62E-5B59536EF46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E6CF3C-556D-4285-A62E-5B59536EF46C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

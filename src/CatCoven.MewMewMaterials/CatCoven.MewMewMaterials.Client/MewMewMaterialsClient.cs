@@ -33,9 +33,11 @@ namespace CatCoven.MewMewMaterials.Client
             throw new NotImplementedException();
         }
 
-        public Task<bool> ItLives()
+        public async Task<bool> ItLives()
         {
-            throw new NotImplementedException();
+            var request = new MewMewDepositContract();
+            var response = await _client.ItLives(request);
+            return response != null;
         }
 
         public Task<Cache> UpdateCache(Cache cache)

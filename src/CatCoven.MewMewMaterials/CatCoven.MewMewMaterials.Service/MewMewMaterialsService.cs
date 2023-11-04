@@ -19,7 +19,7 @@ namespace CatCoven.MewMewMaterials
             throw new NotImplementedException();
         }
 
-        public async Task<MewMewResponseContract> ItLives(CallContext context = default)
+        public async Task<MewMewResponseContract> ItLives(MewMewDepositContract request, CallContext context = default)
         {
             Task.Delay(1).Wait();
             return new MewMewResponseContract();
