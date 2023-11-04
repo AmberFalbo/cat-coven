@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.58.0" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.36.0" />
+    <PackageReference Include="protobuf-net" Version="3.2.26" />
+    <PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
