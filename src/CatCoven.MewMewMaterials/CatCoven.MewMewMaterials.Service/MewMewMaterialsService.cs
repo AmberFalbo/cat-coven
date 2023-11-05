@@ -12,8 +12,8 @@ namespace CatCoven.MewMewMaterials
 {
     public class MewMewMaterialsService : IMewMewMaterialsService
     {
-        private IMewMewMaterialsProcessor _mewMewMaterialsProcessor;
-        private IMewMewMaterialsRequestValidator _mewMewMaterialsRequestValidator;
+        private readonly IMewMewMaterialsProcessor _mewMewMaterialsProcessor;
+        private readonly IMewMewMaterialsRequestValidator _mewMewMaterialsRequestValidator;
 
         public MewMewMaterialsService(
             IMewMewMaterialsProcessor mewMewMaterialsProcessor,
@@ -25,21 +25,7 @@ namespace CatCoven.MewMewMaterials
 
         public async Task<MewMewResponseContract> AddMaterials(MewMewDepositContract request, CallContext context = default)
         {
-            try
-            {
-                _mewMewMaterialsRequestValidator.Validate(request);
-            }
-            catch (ArgumentException ex)
-            {
-                var response = new MewMewResponseContract
-                {
-                    Cache = null,
-                    StatusCode = Grpc.Core.StatusCode.InvalidArgument,
-                    Message = ex.Message
-                };
-
-                return response;
-            }
+            _mewMewMaterialsRequestValidator.Validate(request);
 
             var reagentName = request.ReagentName;
             var quantity = request.Quantity;
@@ -53,11 +39,12 @@ namespace CatCoven.MewMewMaterials
                 var cache = await _mewMewMaterialsProcessor.AddMaterials(reagent, meowMageId);
                 var cacheContract = cache.ToContract();
 
+                var meowMageName = cache.MeowMage.Name;
                 var response = new MewMewResponseContract
                 {
                     Cache = cacheContract,
                     StatusCode = Grpc.Core.StatusCode.OK,
-                    Message = $"Added {quantity} {reagentName}(s) to {meowMageId}'s cache."
+                    Message = $"Added {quantity} {reagentName}(s) to {meowMageName}'s cache."
                 };
 
                 return response;
@@ -73,12 +60,40 @@ namespace CatCoven.MewMewMaterials
 
                 return response;
             }
-
         }
 
-        public Task<MewMewResponseContract> GetCache(MewMewGetCacheContract request, CallContext context = default)
+        public async Task<MewMewResponseContract> GetCache(MewMewGetCacheContract request, CallContext context = default)
         {
-            throw new NotImplementedException();
+            _mewMewMaterialsRequestValidator.Validate(request);
+
+            var meowMageId = request.MeowMageId;
+
+            try
+            {
+                var cache = await _mewMewMaterialsProcessor.GetCache(meowMageId);
+                var cacheContract = cache.ToContract();
+
+                var meowMageName = cache.MeowMage.Name;
+                var response = new MewMewResponseContract
+                {
+                    Cache = cacheContract,
+                    StatusCode = Grpc.Core.StatusCode.OK,
+                    Message = $"Successfully retrieved {meowMageName}'s cache."
+                };
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var response = new MewMewResponseContract
+                {
+                    Cache = null,
+                    StatusCode = Grpc.Core.StatusCode.Internal,
+                    Message = ex.Message
+                };
+
+                return response;
+            }
         }
 
         public async Task<MewMewResponseContract> ItLives(MewMewDepositContract request, CallContext context = default)

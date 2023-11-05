@@ -9,5 +9,7 @@ namespace CatCoven.MewMewMaterials.Service
     public interface IMewMewMaterialsRequestValidator
     {
         void Validate(MewMewDepositContract request);
+
+        void Validate(MewMewGetCacheContract request);
     }
 }

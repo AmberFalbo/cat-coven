@@ -4,11 +4,27 @@
 
 using CatCoven.MewMewMaterials.Service.Models.Constants;
 using CatCoven.MewMewMaterials.ServiceContracts;
+using Grpc.Core;
 
 namespace CatCoven.MewMewMaterials.Service
 {
     public class MewMewMaterialsRequestValidator : IMewMewMaterialsRequestValidator
     {
+        public void Validate(MewMewGetCacheContract request)
+        {
+            if (request == null)
+            {
+                var message = "Request is null";
+                Throw(message);
+            }
+
+            if (!Guid.TryParse(request.MeowMageId, out var _))
+            {
+                var message = $"MeowMage Id {request.MeowMageId} is not a valid Id format, expected Guid.";
+                Throw(message);
+            }
+        }
+
         public void Validate(MewMewDepositContract request)
         {
             var failureMessages = new List<string>();
@@ -16,7 +32,7 @@ namespace CatCoven.MewMewMaterials.Service
             if (request == null)
             {
                 var message = "Request is null";
-                failureMessages.Add(message);
+                Throw(message);
             }
 
             if (!Guid.TryParse(request.MeowMageId, out var _))
@@ -40,8 +56,15 @@ namespace CatCoven.MewMewMaterials.Service
             if (failureMessages.Any())
             {
                 var message = string.Join(", ", failureMessages);
-                throw new ArgumentException(message);
+                Throw(message);
             }
+        }
+
+        private static void Throw(string message)
+        {
+            var status = new Status(StatusCode.InvalidArgument, message);
+
+            throw new RpcException(status);
         }
     }
 }
