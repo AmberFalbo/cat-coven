@@ -6,6 +6,7 @@ using CatCoven.MewMewMaterials.Service;
 using CatCoven.MewMewMaterials.Service.Models;
 using CatCoven.MewMewMaterials.Service.Models.Constants;
 using CatCoven.MewMewMaterials.ServiceContracts;
+using Grpc.Core;
 using ProtoBuf.Grpc;
 
 namespace CatCoven.MewMewMaterials
@@ -43,7 +44,7 @@ namespace CatCoven.MewMewMaterials
                 var response = new MewMewResponseContract
                 {
                     Cache = cacheContract,
-                    StatusCode = Grpc.Core.StatusCode.OK,
+                    StatusCode = StatusCode.OK,
                     Message = $"Added {quantity} {reagentName}(s) to {meowMageName}'s cache."
                 };
 
@@ -54,7 +55,7 @@ namespace CatCoven.MewMewMaterials
                 var response = new MewMewResponseContract
                 {
                     Cache = null,
-                    StatusCode = Grpc.Core.StatusCode.Internal,
+                    StatusCode = StatusCode.Internal,
                     Message = ex.Message
                 };
 
@@ -77,7 +78,7 @@ namespace CatCoven.MewMewMaterials
                 var response = new MewMewResponseContract
                 {
                     Cache = cacheContract,
-                    StatusCode = Grpc.Core.StatusCode.OK,
+                    StatusCode = StatusCode.OK,
                     Message = $"Successfully retrieved {meowMageName}'s cache."
                 };
 
@@ -88,7 +89,7 @@ namespace CatCoven.MewMewMaterials
                 var response = new MewMewResponseContract
                 {
                     Cache = null,
-                    StatusCode = Grpc.Core.StatusCode.Internal,
+                    StatusCode = StatusCode.Internal,
                     Message = ex.Message
                 };
 
@@ -102,13 +103,15 @@ namespace CatCoven.MewMewMaterials
 
             var response = new MewMewResponseContract
             {
+                Cache = null,
+                StatusCode = StatusCode.OK,
                 Message = "It lives!"
             };
 
             return response;
         }
 
-        public Task<MewMewResponseContract> UpdateCache(MewMewGetCacheContract request, CallContext context = default)
+        public Task<MewMewResponseContract> UpdateCache(MewMewUpdateCacheContract request, CallContext context = default)
         {
             throw new NotImplementedException();
         }
