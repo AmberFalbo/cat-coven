@@ -4,6 +4,7 @@
 
 using CatCoven.MewMewMaterials;
 using CatCoven.MewMewMaterials.Data;
+using CatCoven.MewMewMaterials.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,9 @@ builder.Services.AddDbContext<MaterialsDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddGrpc();
+
+builder.Services.AddTransient<IMewMewMaterialsProcessor, MewMewMaterialsProcessor>();
+builder.Services.AddTransient<IMewMewMaterialsRepository, MewMewMaterialsRepository>();
 
 var app = builder.Build();
 

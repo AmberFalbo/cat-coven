@@ -2,6 +2,7 @@
 // Cat Coven API
 // ------------------------------------
 
+using CatCoven.MewMewMaterials.Service;
 using CatCoven.MewMewMaterials.ServiceContracts;
 using ProtoBuf.Grpc;
 
@@ -9,6 +10,13 @@ namespace CatCoven.MewMewMaterials
 {
     public class MewMewMaterialsService : IMewMewMaterialsService
     {
+        private IMewMewMaterialsProcessor mewMewMaterialsProcessor;
+
+        public MewMewMaterialsService(IMewMewMaterialsProcessor mewMewMaterialsProcessor)
+        {
+            this.mewMewMaterialsProcessor = mewMewMaterialsProcessor;
+        }
+
         public Task<MewMewResponseContract> AddMaterials(MewMewDepositContract request, CallContext context = default)
         {
             throw new NotImplementedException();

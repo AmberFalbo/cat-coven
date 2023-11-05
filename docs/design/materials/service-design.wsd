@@ -26,7 +26,7 @@ alt
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : created cache
         MewMewMaterialsProcessor -> MewMewMaterialsService : created cache
         MewMewMaterialsService -> MewMewMaterielsClient : created cache
-        MewMewMaterialsClient -> Client : created cache
+        MewMewMaterielsClient -> Client : created cache
     else #FFA6A6 failure
         Database -> MewMewMaterialsRepository : failure
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
@@ -50,7 +50,7 @@ alt
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
         MewMewMaterialsProcessor -> MewMewMaterialsService : cache
         MewMewMaterialsService -> MewMewMaterielsClient : cache
-        MewMewMaterialsClient -> Client : cache
+        MewMewMaterielsClient -> Client : cache
     else #FFA6A6 failure
         Database -> MewMewMaterialsRepository : failure
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
@@ -74,7 +74,7 @@ alt
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
         MewMewMaterialsProcessor -> MewMewMaterialsService : cache
         MewMewMaterialsService -> MewMewMaterielsClient : cache
-        MewMewMaterialsClient -> Client : cache
+        MewMewMaterielsClient -> Client : cache
     else #FFA6A6 failure
         Database -> MewMewMaterialsRepository : failure
         MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
