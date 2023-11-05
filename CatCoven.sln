@@ -9,13 +9,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.PurrfectPotions.Service", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.Service\CatCoven.PurrfectPotions.Service.csproj", "{C686A045-9270-48E0-A456-7CED739ECF72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.Client", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.Client\CatCoven.MewMewMaterials.Client.csproj", "{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.Client", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.Client\CatCoven.MewMewMaterials.Client.csproj", "{0C56C160-7467-4C1B-A5EE-37F0FA6F7A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.ServiceContracts", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.ServiceContracts\CatCoven.MewMewMaterials.ServiceContracts.csproj", "{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.ServiceContracts", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.ServiceContracts\CatCoven.MewMewMaterials.ServiceContracts.csproj", "{C12F8935-68BC-4574-BACD-EE66C3BA1BE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.UnitTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.UnitTests\CatCoven.MewMewMaterials.UnitTests.csproj", "{B3E6CF3C-556D-4285-A62E-5B59536EF46C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.UnitTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.UnitTests\CatCoven.MewMewMaterials.UnitTests.csproj", "{B3E6CF3C-556D-4285-A62E-5B59536EF46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.MewMewMaterials.FunctionalTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.FunctionalTests\CatCoven.MewMewMaterials.FunctionalTests.csproj", "{E70C4481-8E57-4F34-928B-A2FF848F455E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.MewMewMaterials.FunctionalTests", "src\CatCoven.MewMewMaterials\CatCoven.MewMewMaterials.FunctionalTests\CatCoven.MewMewMaterials.FunctionalTests.csproj", "{E70C4481-8E57-4F34-928B-A2FF848F455E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.KittenCharmSpells.ServiceContracts", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.ServiceContracts\CatCoven.KittenCharmSpells.ServiceContracts.csproj", "{B742B94F-13D0-41EE-9E85-0D892D4DFF5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.KittenCharmSpells.Client", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.Client\CatCoven.KittenCharmSpells.Client.csproj", "{4EA6B82D-828D-417E-B224-E7C55DF91CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.KittenCharmSpells.UnitTests", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.UnitTests\CatCoven.KittenCharmSpells.UnitTests.csproj", "{4ED2ED52-BA50-4909-B02C-DF6632EDF7BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.KittenCharmSpells.FunctionalTests", "src\CatCoven.KittenCharmSpells\CatCoven.KittenCharmSpells.FunctionalTests\CatCoven.KittenCharmSpells.FunctionalTests.csproj", "{EF82853C-1442-448E-82B8-C4E1CB93D7AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.PurrfectPotions.FunctionalTests", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.FunctionalTests\CatCoven.PurrfectPotions.FunctionalTests.csproj", "{0C6E3A7E-5A5B-49F1-BA9F-9231A612F1C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatCoven.PurrfectPotions.UnitTests", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.UnitTests\CatCoven.PurrfectPotions.UnitTests.csproj", "{F287841D-BA51-4834-A59F-C3B8D3DF9AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.PurrfectPotions.Client", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.Client\CatCoven.PurrfectPotions.Client.csproj", "{4085C54C-D79A-4E28-96C5-8A9DC4EE72A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatCoven.PurrfectPotions.ServiceContracts", "src\CatCoven.PurrfectPotions\CatCoven.PurrfectPotions.ServiceContracts\CatCoven.PurrfectPotions.ServiceContracts.csproj", "{2162D060-E516-4915-8A8D-E06E009BE593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +67,38 @@ Global
 		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E70C4481-8E57-4F34-928B-A2FF848F455E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B742B94F-13D0-41EE-9E85-0D892D4DFF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B742B94F-13D0-41EE-9E85-0D892D4DFF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B742B94F-13D0-41EE-9E85-0D892D4DFF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B742B94F-13D0-41EE-9E85-0D892D4DFF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA6B82D-828D-417E-B224-E7C55DF91CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA6B82D-828D-417E-B224-E7C55DF91CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA6B82D-828D-417E-B224-E7C55DF91CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA6B82D-828D-417E-B224-E7C55DF91CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED2ED52-BA50-4909-B02C-DF6632EDF7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED2ED52-BA50-4909-B02C-DF6632EDF7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED2ED52-BA50-4909-B02C-DF6632EDF7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED2ED52-BA50-4909-B02C-DF6632EDF7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF82853C-1442-448E-82B8-C4E1CB93D7AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF82853C-1442-448E-82B8-C4E1CB93D7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF82853C-1442-448E-82B8-C4E1CB93D7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF82853C-1442-448E-82B8-C4E1CB93D7AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6E3A7E-5A5B-49F1-BA9F-9231A612F1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6E3A7E-5A5B-49F1-BA9F-9231A612F1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6E3A7E-5A5B-49F1-BA9F-9231A612F1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6E3A7E-5A5B-49F1-BA9F-9231A612F1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F287841D-BA51-4834-A59F-C3B8D3DF9AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F287841D-BA51-4834-A59F-C3B8D3DF9AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F287841D-BA51-4834-A59F-C3B8D3DF9AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F287841D-BA51-4834-A59F-C3B8D3DF9AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4085C54C-D79A-4E28-96C5-8A9DC4EE72A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4085C54C-D79A-4E28-96C5-8A9DC4EE72A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4085C54C-D79A-4E28-96C5-8A9DC4EE72A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4085C54C-D79A-4E28-96C5-8A9DC4EE72A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2162D060-E516-4915-8A8D-E06E009BE593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2162D060-E516-4915-8A8D-E06E009BE593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2162D060-E516-4915-8A8D-E06E009BE593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2162D060-E516-4915-8A8D-E06E009BE593}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

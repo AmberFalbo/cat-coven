@@ -18,4 +18,8 @@
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatCoven.PurrfectPotions.ServiceContracts\CatCoven.PurrfectPotions.ServiceContracts.csproj" />
+  </ItemGroup>
+
 </Project>
