@@ -22,7 +22,13 @@ namespace CatCoven.MewMewMaterials
         public async Task<MewMewResponseContract> ItLives(MewMewDepositContract request, CallContext context = default)
         {
             Task.Delay(1).Wait();
-            return new MewMewResponseContract();
+
+            var response = new MewMewResponseContract
+            {
+                Message = "It lives!"
+            };
+
+            return response;
         }
 
         public Task<MewMewResponseContract> UpdateCache(MewMewGetCacheContract request, CallContext context = default)
