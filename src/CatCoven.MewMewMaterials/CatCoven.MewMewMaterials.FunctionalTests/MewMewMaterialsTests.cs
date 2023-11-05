@@ -9,7 +9,7 @@ namespace CatCoven.MewMewMaterials.FunctionalTests
     [TestClass]
     public class MewMewMaterialsTests
     {
-        private readonly IMewMewMaterialsClient _client;
+        private readonly MewMewMaterialsClient _client;
 
         public MewMewMaterialsTests()
         {
