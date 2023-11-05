@@ -18,6 +18,12 @@ namespace CatCoven.MewMewMaterials.Service
 
         public static partial Reagent ToReagent(this ReagentContract reagentContract);
 
+        public static partial CacheContract ToContract(this Cache cache);
+
+        public static partial MeowMageContract ToContract(this MeowMage meowMage);
+
+        public static partial ReagentContract ToContract(this Reagent reagent);
+
         public static partial CacheStorageContract ToStorageContract(this Cache cache);
 
         public static partial MeowMageStorageContract ToStorageContract(this MeowMage meowMage);
