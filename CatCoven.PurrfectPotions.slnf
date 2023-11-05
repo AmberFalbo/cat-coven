@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "CatCoven.sln",
+    "projects": [
+      "src\\CatCoven.PurrfectPotions\\CatCoven.PurrfectPotions.Client\\CatCoven.PurrfectPotions.Client.csproj",
+      "src\\CatCoven.PurrfectPotions\\CatCoven.PurrfectPotions.FunctionalTests\\CatCoven.PurrfectPotions.FunctionalTests.csproj",
+      "src\\CatCoven.PurrfectPotions\\CatCoven.PurrfectPotions.ServiceContracts\\CatCoven.PurrfectPotions.ServiceContracts.csproj",
+      "src\\CatCoven.PurrfectPotions\\CatCoven.PurrfectPotions.Service\\CatCoven.PurrfectPotions.Service.csproj",
+      "src\\CatCoven.PurrfectPotions\\CatCoven.PurrfectPotions.UnitTests\\CatCoven.PurrfectPotions.UnitTests.csproj"
+    ]
+  }
+}

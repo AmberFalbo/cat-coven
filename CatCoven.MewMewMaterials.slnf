@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "CatCoven.sln",
+    "projects": [
+      "src\\CatCoven.MewMewMaterials\\CatCoven.MewMewMaterials.Client\\CatCoven.MewMewMaterials.Client.csproj",
+      "src\\CatCoven.MewMewMaterials\\CatCoven.MewMewMaterials.FunctionalTests\\CatCoven.MewMewMaterials.FunctionalTests.csproj",
+      "src\\CatCoven.MewMewMaterials\\CatCoven.MewMewMaterials.ServiceContracts\\CatCoven.MewMewMaterials.ServiceContracts.csproj",
+      "src\\CatCoven.MewMewMaterials\\CatCoven.MewMewMaterials.Service\\CatCoven.MewMewMaterials.Service.csproj",
+      "src\\CatCoven.MewMewMaterials\\CatCoven.MewMewMaterials.UnitTests\\CatCoven.MewMewMaterials.UnitTests.csproj"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "CatCoven.sln",
+    "projects": [
+      "src\\CatCoven.KittenCharmSpells\\CatCoven.KittenCharmSpells.Client\\CatCoven.KittenCharmSpells.Client.csproj",
+      "src\\CatCoven.KittenCharmSpells\\CatCoven.KittenCharmSpells.FunctionalTests\\CatCoven.KittenCharmSpells.FunctionalTests.csproj",
+      "src\\CatCoven.KittenCharmSpells\\CatCoven.KittenCharmSpells.ServiceContracts\\CatCoven.KittenCharmSpells.ServiceContracts.csproj",
+      "src\\CatCoven.KittenCharmSpells\\CatCoven.KittenCharmSpells.Service\\CatCoven.KittenCharmSpells.Service.csproj",
+      "src\\CatCoven.KittenCharmSpells\\CatCoven.KittenCharmSpells.UnitTests\\CatCoven.KittenCharmSpells.UnitTests.csproj"
+    ]
+  }
+}
