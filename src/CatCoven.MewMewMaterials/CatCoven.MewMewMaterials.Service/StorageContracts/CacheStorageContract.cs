@@ -13,6 +13,6 @@ namespace CatCoven.MewMewMaterials.StorageContracts
         public Guid MeowMageId { get; set; }
 
         // Navigation
-        public ICollection<ReagentStorageContract> Reagents { get; set; }
+        public IEnumerable<ReagentStorageContract> Reagents { get; set; }
     }
 }
