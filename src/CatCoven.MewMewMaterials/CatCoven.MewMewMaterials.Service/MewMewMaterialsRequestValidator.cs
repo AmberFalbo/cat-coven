@@ -25,6 +25,27 @@ namespace CatCoven.MewMewMaterials.Service
             }
         }
 
+        public void Validate(MewMewUpdateCacheContract request)
+        {
+            if (request == null)
+            {
+                var message = "Request is null";
+                Throw(message);
+            }
+
+            if (request.Cache == null)
+            {
+                var message = "Cache is null";
+                Throw(message);
+            }
+
+            if (!Guid.TryParse(request.Cache.Id, out var _))
+            {
+                var message = $"Cache Id {request.Cache.Id} is not a valid Id format, expected Guid.";
+                Throw(message);
+            }
+        }
+
         public void Validate(MewMewDepositContract request)
         {
             var failureMessages = new List<string>();

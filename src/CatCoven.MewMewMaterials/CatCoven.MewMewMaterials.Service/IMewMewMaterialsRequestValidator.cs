@@ -11,5 +11,7 @@ namespace CatCoven.MewMewMaterials.Service
         void Validate(MewMewDepositContract request);
 
         void Validate(MewMewGetCacheContract request);
+
+        void Validate(MewMewUpdateCacheContract request);
     }
 }
