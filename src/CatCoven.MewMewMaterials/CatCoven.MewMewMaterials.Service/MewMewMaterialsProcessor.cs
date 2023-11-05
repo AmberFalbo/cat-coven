@@ -2,6 +2,8 @@
 // Cat Coven API
 // ------------------------------------
 
+using CatCoven.MewMewMaterials.Service.Models;
+
 namespace CatCoven.MewMewMaterials.Service
 {
     public class MewMewMaterialsProcessor : IMewMewMaterialsProcessor
@@ -11,6 +13,21 @@ namespace CatCoven.MewMewMaterials.Service
         public MewMewMaterialsProcessor(IMewMewMaterialsRepository mewMewMaterialsRepository)
         {
             _mewMewMaterialsRepository = mewMewMaterialsRepository;
+        }
+
+        public Task<Cache> AddMaterials(Reagent reagent, string meowMageId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Cache> GetCache(string meowMageId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Cache> UpdateCache(Cache cache)
+        {
+            throw new NotImplementedException();
         }
     }
 }

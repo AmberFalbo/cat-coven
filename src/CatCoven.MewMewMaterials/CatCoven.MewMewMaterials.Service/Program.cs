@@ -18,6 +18,7 @@ builder.Services.AddGrpc();
 
 builder.Services.AddTransient<IMewMewMaterialsProcessor, MewMewMaterialsProcessor>();
 builder.Services.AddTransient<IMewMewMaterialsRepository, MewMewMaterialsRepository>();
+builder.Services.AddTransient<IMewMewMaterialsRequestValidator, MewMewMaterialsRequestValidator>();
 
 var app = builder.Build();
 

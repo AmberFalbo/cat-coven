@@ -3,6 +3,8 @@
 // ------------------------------------
 
 using CatCoven.MewMewMaterials.Service;
+using CatCoven.MewMewMaterials.Service.Models;
+using CatCoven.MewMewMaterials.Service.Models.Constants;
 using CatCoven.MewMewMaterials.ServiceContracts;
 using ProtoBuf.Grpc;
 
@@ -10,16 +12,68 @@ namespace CatCoven.MewMewMaterials
 {
     public class MewMewMaterialsService : IMewMewMaterialsService
     {
-        private IMewMewMaterialsProcessor mewMewMaterialsProcessor;
+        private IMewMewMaterialsProcessor _mewMewMaterialsProcessor;
+        private IMewMewMaterialsRequestValidator _mewMewMaterialsRequestValidator;
 
-        public MewMewMaterialsService(IMewMewMaterialsProcessor mewMewMaterialsProcessor)
+        public MewMewMaterialsService(
+            IMewMewMaterialsProcessor mewMewMaterialsProcessor,
+            IMewMewMaterialsRequestValidator mewMewMaterialsRequestValidator)
         {
-            this.mewMewMaterialsProcessor = mewMewMaterialsProcessor;
+            _mewMewMaterialsProcessor = mewMewMaterialsProcessor;
+            _mewMewMaterialsRequestValidator = mewMewMaterialsRequestValidator;
         }
 
-        public Task<MewMewResponseContract> AddMaterials(MewMewDepositContract request, CallContext context = default)
+        public async Task<MewMewResponseContract> AddMaterials(MewMewDepositContract request, CallContext context = default)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _mewMewMaterialsRequestValidator.Validate(request);
+            }
+            catch (ArgumentException ex)
+            {
+                var response = new MewMewResponseContract
+                {
+                    Cache = null,
+                    StatusCode = Grpc.Core.StatusCode.InvalidArgument,
+                    Message = ex.Message
+                };
+
+                return response;
+            }
+
+            var reagentName = request.ReagentName;
+            var quantity = request.Quantity;
+            var flavorText = ReagentCatalog.ReagentsDictionary[reagentName];
+
+            var reagent = new Reagent(reagentName, quantity, flavorText);
+            var meowMageId = request.MeowMageId;
+
+            try
+            {
+                var cache = await _mewMewMaterialsProcessor.AddMaterials(reagent, meowMageId);
+                var cacheContract = cache.ToContract();
+
+                var response = new MewMewResponseContract
+                {
+                    Cache = cacheContract,
+                    StatusCode = Grpc.Core.StatusCode.OK,
+                    Message = $"Added {quantity} {reagentName}(s) to {meowMageId}'s cache."
+                };
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var response = new MewMewResponseContract
+                {
+                    Cache = null,
+                    StatusCode = Grpc.Core.StatusCode.Internal,
+                    Message = ex.Message
+                };
+
+                return response;
+            }
+
         }
 
         public Task<MewMewResponseContract> GetCache(MewMewGetCacheContract request, CallContext context = default)
@@ -29,7 +83,7 @@ namespace CatCoven.MewMewMaterials
 
         public async Task<MewMewResponseContract> ItLives(MewMewDepositContract request, CallContext context = default)
         {
-            Task.Delay(1).Wait();
+            await Task.CompletedTask;
 
             var response = new MewMewResponseContract
             {
