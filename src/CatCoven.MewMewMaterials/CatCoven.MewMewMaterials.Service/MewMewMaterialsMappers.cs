@@ -24,6 +24,7 @@ namespace CatCoven.MewMewMaterials.Service
 
         public static partial ReagentContract ToContract(this Reagent reagent);
 
+        [MapProperty(nameof(Cache.MeowMage.Id), nameof(CacheStorageContract.MeowMageId))]
         public static partial CacheStorageContract ToStorageContract(this Cache cache);
 
         public static partial MeowMageStorageContract ToStorageContract(this MeowMage meowMage);

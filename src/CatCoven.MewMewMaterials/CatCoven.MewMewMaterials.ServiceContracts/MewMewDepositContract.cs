@@ -10,7 +10,7 @@ namespace CatCoven.MewMewMaterials.ServiceContracts
     public class MewMewDepositContract
     {
         [ProtoMember(1)]
-        public string MeowMageId { get; set; }
+        public MeowMageContract MeowMage { get; set; }
 
         [ProtoMember(2)]
         public string ReagentName { get; set; }

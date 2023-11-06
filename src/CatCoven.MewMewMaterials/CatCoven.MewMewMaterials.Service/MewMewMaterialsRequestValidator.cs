@@ -56,9 +56,9 @@ namespace CatCoven.MewMewMaterials.Service
                 Throw(message);
             }
 
-            if (!Guid.TryParse(request.MeowMageId, out var _))
+            if (!Guid.TryParse(request.MeowMage.Id, out var _))
             {
-                var message = $"MeowMage Id {request.MeowMageId} is not a valid Id format, expected Guid.";
+                var message = $"MeowMage Id {request.MeowMage.Id} is not a valid Id format, expected Guid.";
                 failureMessages.Add(message);
             }
 

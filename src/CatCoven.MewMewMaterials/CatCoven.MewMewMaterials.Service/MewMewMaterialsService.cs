@@ -31,7 +31,7 @@ namespace CatCoven.MewMewMaterials
         {
             _mewMewMaterialsRequestValidator.Validate(request);
 
-            var meowMageId = request.MeowMageId;
+            var meowMageId = request.MeowMage.Id;
 
             try
             {
@@ -40,8 +40,9 @@ namespace CatCoven.MewMewMaterials
                 var flavorText = ReagentCatalog.ReagentsDictionary[reagentName];
 
                 var reagent = new Reagent(reagentName, quantity, flavorText);
+                var meowMage = request.MeowMage.ToMeowMage();
 
-                var cache = await _mewMewMaterialsProcessor.AddMaterials(reagent, meowMageId);
+                var cache = await _mewMewMaterialsProcessor.AddMaterials(reagent, meowMage);
                 var cacheContract = cache.ToContract();
 
                 var meowMageName = cache.MeowMage.Name;

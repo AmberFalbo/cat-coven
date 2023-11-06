@@ -15,7 +15,7 @@ namespace CatCoven.MewMewMaterials.Service
             _mewMewMaterialsRepository = mewMewMaterialsRepository;
         }
 
-        public Task<Cache> AddMaterials(Reagent reagent, string meowMageId)
+        public Task<Cache> AddMaterials(Reagent reagent, MeowMage meowMage)
         {
             throw new NotImplementedException();
         }
