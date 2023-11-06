@@ -8,10 +8,14 @@ namespace CatCoven.MewMewMaterials.Service
 {
     public class MewMewMaterialsProcessor : IMewMewMaterialsProcessor
     {
-        private IMewMewMaterialsRepository _mewMewMaterialsRepository;
+        private readonly ILogger _logger;
+        private readonly IMewMewMaterialsRepository _mewMewMaterialsRepository;
 
-        public MewMewMaterialsProcessor(IMewMewMaterialsRepository mewMewMaterialsRepository)
+        public MewMewMaterialsProcessor(
+            ILogger<MewMewMaterialsProcessor> logger,
+            IMewMewMaterialsRepository mewMewMaterialsRepository)
         {
+            _logger = logger;
             _mewMewMaterialsRepository = mewMewMaterialsRepository;
         }
 
