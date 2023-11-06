@@ -21,7 +21,7 @@ namespace CatCoven.MewMewMaterials.Service
             throw new NotImplementedException();
         }
 
-        public Task<Cache> GetCache(Guid cacheId)
+        public Task<Cache> GetCache(string cacheId)
         {
             throw new NotImplementedException();
         }

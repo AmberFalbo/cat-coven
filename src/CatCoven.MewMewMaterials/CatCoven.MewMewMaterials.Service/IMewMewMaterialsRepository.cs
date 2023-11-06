@@ -10,7 +10,7 @@ namespace CatCoven.MewMewMaterials.Service
     {
         Task<Cache> CreateCache(Cache cache);
 
-        Task<Cache> GetCache(Guid cacheId);
+        Task<Cache> GetCache(string cacheId);
 
         Task<Cache> UpdateCache(Cache cache);
     }

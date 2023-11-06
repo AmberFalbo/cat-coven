@@ -16,5 +16,21 @@ namespace CatCoven.MewMewMaterials.Service.Models
             MeowMage = meowMage;
             Reagents = new List<Reagent>();
         }
+
+        public Reagent AddReagent(Reagent reagent)
+        {
+            foreach (var existingReagent in Reagents)
+            {
+                if (reagent.Name == existingReagent.Name)
+                {
+                    existingReagent.Quantity += reagent.Quantity;
+                    return existingReagent;
+                }
+            }
+
+            Reagents.Add(reagent);
+
+            return reagent;
+        }
     }
 }

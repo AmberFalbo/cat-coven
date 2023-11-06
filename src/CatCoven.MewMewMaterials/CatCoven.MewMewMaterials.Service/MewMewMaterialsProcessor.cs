@@ -8,30 +8,43 @@ namespace CatCoven.MewMewMaterials.Service
 {
     public class MewMewMaterialsProcessor : IMewMewMaterialsProcessor
     {
-        private readonly ILogger _logger;
         private readonly IMewMewMaterialsRepository _mewMewMaterialsRepository;
 
         public MewMewMaterialsProcessor(
-            ILogger<MewMewMaterialsProcessor> logger,
             IMewMewMaterialsRepository mewMewMaterialsRepository)
         {
-            _logger = logger;
             _mewMewMaterialsRepository = mewMewMaterialsRepository;
         }
 
-        public Task<Cache> AddMaterials(Reagent reagent, MeowMage meowMage)
+        public async Task<Cache> AddMaterials(Reagent reagent, MeowMage meowMage)
         {
-            throw new NotImplementedException();
+            var cache = await GetCache(meowMage.Id.ToString());
+
+            if (cache == null)
+            {
+                var newCache = new Cache(meowMage);
+                newCache.AddReagent(reagent);
+                var storedCache = await _mewMewMaterialsRepository.CreateCache(newCache);
+
+                return storedCache;
+            }
+
+            cache.AddReagent(reagent);
+            var updatedCache = await _mewMewMaterialsRepository.UpdateCache(cache);
+
+            return updatedCache;
         }
 
-        public Task<Cache> GetCache(string meowMageId)
+        public async Task<Cache> GetCache(string meowMageId)
         {
-            throw new NotImplementedException();
+            var cache = await _mewMewMaterialsRepository.GetCache(meowMageId);
+            return cache;
         }
 
-        public Task<Cache> UpdateCache(Cache cache)
+        public async Task<Cache> UpdateCache(Cache cache)
         {
-            throw new NotImplementedException();
+            var updatedCache = await _mewMewMaterialsRepository.UpdateCache(cache);
+            return updatedCache;
         }
     }
 }
