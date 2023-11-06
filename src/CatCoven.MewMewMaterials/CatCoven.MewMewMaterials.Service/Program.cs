@@ -2,7 +2,6 @@
 // Cat Coven API
 // ------------------------------------
 
-using CatCoven.MewMewMaterials;
 using CatCoven.MewMewMaterials.Data;
 using CatCoven.MewMewMaterials.Service;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +14,7 @@ builder.Services.AddDbContext<MaterialsDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddGrpcReflection();
 
 builder.Services.AddTransient<IMewMewMaterialsProcessor, MewMewMaterialsProcessor>();
 builder.Services.AddTransient<IMewMewMaterialsRepository, MewMewMaterialsRepository>();
@@ -26,5 +26,7 @@ app.UseRouting();
 
 app.MapGrpcService<MewMewMaterialsService>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+
+app.MapGrpcReflectionService();
 
 app.Run();
