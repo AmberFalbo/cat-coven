@@ -5,6 +5,7 @@
 using CatCoven.MewMewMaterials.Data;
 using CatCoven.MewMewMaterials.Service;
 using Microsoft.EntityFrameworkCore;
+using ProtoBuf.Grpc.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddGrpcReflection();
 builder.Services.AddTransient<IMewMewMaterialsProcessor, MewMewMaterialsProcessor>();
 builder.Services.AddTransient<IMewMewMaterialsRepository, MewMewMaterialsRepository>();
 builder.Services.AddTransient<IMewMewMaterialsRequestValidator, MewMewMaterialsRequestValidator>();
+
+builder.Services.AddCodeFirstGrpc();
 
 var app = builder.Build();
 
