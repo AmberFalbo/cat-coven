@@ -11,8 +11,6 @@
 - `Add-Migration -Name Init -Project CatCoven.KittenCharmSpells -StartupProject CatCoven.KittenCharmSpells -Context SpellsDbContext`
 - `Update-Database -Project CatCoven.KittenCharmSpells -StartupProject CatCoven.KittenCharmSpells -Context SpellsDbContext`
 
-http://localhost:5197;https://localhost:7064",
-
 ## LocalHost
 
 | Service | https | http |
