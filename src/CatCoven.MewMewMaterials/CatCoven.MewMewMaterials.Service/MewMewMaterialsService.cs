@@ -132,10 +132,10 @@ namespace CatCoven.MewMewMaterials.Service
             {
                 var cache = request.Cache.ToCache();
 
-                var updatedCache = await _mewMewMaterialsProcessor.UpdateCache(cache);
+                await _mewMewMaterialsProcessor.UpdateCache(cache);
 
-                var cacheContract = updatedCache.ToContract();
-                var meowMageName = updatedCache.MeowMage.Name;
+                var cacheContract = cache.ToContract();
+                var meowMageName = cache.MeowMage.Name;
                 var message = $"Successfully updated cache for {meowMageName}";
 
                 var response = new MewMewResponseContract
@@ -145,7 +145,7 @@ namespace CatCoven.MewMewMaterials.Service
                     Message = message
                 };
 
-                LogSuccess(updatedCache, message);
+                LogSuccess(cache, message);
                 return response;
             }
             catch (Exception ex)

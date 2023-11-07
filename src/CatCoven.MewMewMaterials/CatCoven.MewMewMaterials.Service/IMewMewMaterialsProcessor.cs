@@ -12,6 +12,6 @@ namespace CatCoven.MewMewMaterials.Service
 
         Task<Cache> GetCache(string meowMageId);
 
-        Task<Cache> UpdateCache(Cache cache);
+        Task UpdateCache(Cache cache);
     }
 }

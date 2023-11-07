@@ -10,7 +10,7 @@ using Riok.Mapperly.Abstractions;
 namespace CatCoven.MewMewMaterials.Service
 {
     [Mapper]
-    public static partial class MewMewMaterialsMappers
+    public static partial class MewMewMaterialsServiceMappers
     {
         public static partial Cache ToCache(this CacheContract cacheContract);
 

@@ -24,15 +24,15 @@ namespace CatCoven.MewMewMaterials.Service
             {
                 var newCache = new Cache(meowMage);
                 newCache.AddReagent(reagent);
-                var storedCache = await _mewMewMaterialsRepository.CreateCache(newCache);
+                await _mewMewMaterialsRepository.CreateCache(newCache);
 
-                return storedCache;
+                return newCache;
             }
 
             cache.AddReagent(reagent);
-            var updatedCache = await _mewMewMaterialsRepository.UpdateCache(cache);
+            await _mewMewMaterialsRepository.UpdateCache(cache);
 
-            return updatedCache;
+            return cache;
         }
 
         public async Task<Cache> GetCache(string meowMageId)
@@ -41,10 +41,9 @@ namespace CatCoven.MewMewMaterials.Service
             return cache;
         }
 
-        public async Task<Cache> UpdateCache(Cache cache)
+        public async Task UpdateCache(Cache cache)
         {
-            var updatedCache = await _mewMewMaterialsRepository.UpdateCache(cache);
-            return updatedCache;
+            await _mewMewMaterialsRepository.UpdateCache(cache);
         }
     }
 }
