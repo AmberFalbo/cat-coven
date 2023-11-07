@@ -19,15 +19,13 @@ namespace CatCoven.MewMewMaterials.Service
             _logger = logger;
         }
 
-        public async Task<Cache> CreateCache(Cache cache)
+        public async Task CreateCache(Cache cache)
         {
             try
             {
                 var cacheStorageContract = cache.ToStorageContract();
                 var storedCacheContract = await _context.Caches.AddAsync(cacheStorageContract);
                 await _context.SaveChangesAsync();
-
-                return cache;
             }
             catch (Exception ex)
             {
@@ -51,14 +49,13 @@ namespace CatCoven.MewMewMaterials.Service
             }
         }
 
-        public async Task<Cache> UpdateCache(Cache cache)
+        public async Task UpdateCache(Cache cache)
         {
             try
             {
                 var cacheStorageContract = cache.ToStorageContract();
                 _context.Caches.Update(cacheStorageContract);
                 await _context.SaveChangesAsync();
-                return cache;
             }
             catch (Exception ex)
             {

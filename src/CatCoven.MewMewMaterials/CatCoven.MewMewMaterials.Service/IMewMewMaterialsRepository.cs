@@ -8,10 +8,10 @@ namespace CatCoven.MewMewMaterials.Service
 {
     public interface IMewMewMaterialsRepository
     {
-        Task<Cache> CreateCache(Cache cache);
+        Task CreateCache(Cache cache);
 
         Task<Cache> GetCache(string cacheId);
 
-        Task<Cache> UpdateCache(Cache cache);
+        Task UpdateCache(Cache cache);
     }
 }
