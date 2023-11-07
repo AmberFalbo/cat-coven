@@ -4,6 +4,7 @@
 
 using CatCoven.MewMewMaterials.Data;
 using CatCoven.MewMewMaterials.Service.Models;
+using CatCoven.MewMewMaterials.Service.Models.Constants;
 
 namespace CatCoven.MewMewMaterials.Service
 {
@@ -22,13 +23,15 @@ namespace CatCoven.MewMewMaterials.Service
         {
             try
             {
-                await _context.Caches.AddAsync(cache);
+                var cacheStorageContract = cache.ToStorageContract();
+                var storedCacheContract = await _context.Caches.AddAsync(cacheStorageContract);
                 await _context.SaveChangesAsync();
+
                 return cache;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while creating a cache.");
+                LogFailure("An error occurred while creating a cache.", ex);
                 throw;
             }
         }
@@ -37,12 +40,13 @@ namespace CatCoven.MewMewMaterials.Service
         {
             try
             {
-                var cache = await _context.Caches.FindAsync(Guid.Parse(cacheId));
+                var cacheStorageContract = await _context.Caches.FindAsync(Guid.Parse(cacheId));
+                var cache = cacheStorageContract.ToCache();
                 return cache;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while retrieving a cache.");
+                LogFailure("An error occurred while retrieving a cache.", ex);
                 throw;
             }
         }
@@ -51,33 +55,31 @@ namespace CatCoven.MewMewMaterials.Service
         {
             try
             {
-                _context.Caches.Update(cache);
+                var cacheStorageContract = cache.ToStorageContract();
+                _context.Caches.Update(cacheStorageContract);
                 await _context.SaveChangesAsync();
                 return cache;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while updating a cache.");
+                LogFailure("An error occurred while updating a cache.", ex);
                 throw;
             }
         }
 
-        public async Task DeleteCache(string cacheId)
+        private void LogFailure(string meowMageId, Exception ex)
         {
-            try
+            var logEvent = new MewMewMaterialsFailureEvent()
             {
-                var cache = await _context.Caches.FindAsync(Guid.Parse(cacheId));
-                if (cache != null)
-                {
-                    _context.Caches.Remove(cache);
-                    await _context.SaveChangesAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while deleting a cache.");
-                throw;
-            }
+                MeowMageId = meowMageId,
+                Operation = Operation.AddMaterials,
+                OperationDateTime = DateTimeOffset.UtcNow,
+                Exception = ex,
+                Message = ex.Message,
+                InnerExceptionMessage = ex.InnerException?.Message
+            };
+
+            _logger.LogError(ex, nameof(MewMewMaterialsFailureEvent), logEvent);
         }
     }
 }
