@@ -8,11 +8,11 @@ namespace CatCoven.MewMewMaterials.Client
 {
     public interface IMewMewMaterialsClient
     {
-        Task<Cache> AddMaterials(List<Reagent> reagents);
+        Task<Cache> AddMaterials(string reagentName, int quantity, MeowMage meowMage);
 
         Task<Cache> GetCache(Guid meowMageId);
 
-        Task<Cache> UpdateCache(Cache cache);
+        Task UpdateCache(Cache cache);
 
         Task<bool> ItLives();
     }

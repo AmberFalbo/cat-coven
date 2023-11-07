@@ -19,18 +19,38 @@ namespace CatCoven.MewMewMaterials.Client
             _client = channel.CreateGrpcService<IMewMewMaterialsService>();
         }
 
-        public Task<Cache> AddMaterials(List<Reagent> reagents)
+        public async Task<Cache> AddMaterials(string reagentName, int quantity, MeowMage meowMage)
         {
-            // map reagents to request contract
-            // call service
-            // map response contract to cache
+            var requestContract = new MewMewDepositContract
+            {
+                MeowMage = new MeowMageContract
+                {
+                    Id = meowMage.Id.ToString(),
+                    Name = meowMage.Name
+                },
+                ReagentName = reagentName,
+                Quantity = quantity
+            };
 
-            throw new NotImplementedException();
+            var responseContract = await _client.AddMaterials(requestContract);
+            var cacheContract = responseContract.Cache;
+            var cache = cacheContract.ToCache();
+
+            return cache;
         }
 
-        public Task<Cache> GetCache(Guid meowMageId)
+        public async Task<Cache> GetCache(Guid meowMageId)
         {
-            throw new NotImplementedException();
+            var requestContract = new MewMewGetCacheContract
+            {
+                MeowMageId = meowMageId.ToString()
+            };
+
+            var responseContract = await _client.GetCache(requestContract);
+            var cacheContract = responseContract.Cache;
+            var cache = cacheContract.ToCache();
+
+            return cache;
         }
 
         public async Task<bool> ItLives()
@@ -40,9 +60,14 @@ namespace CatCoven.MewMewMaterials.Client
             return response != null;
         }
 
-        public Task<Cache> UpdateCache(Cache cache)
+        public async Task UpdateCache(Cache cache)
         {
-            throw new NotImplementedException();
+            var requestContract = new MewMewUpdateCacheContract
+            {
+                Cache = cache.ToContract()
+            };
+
+            await _client.UpdateCache(requestContract);
         }
     }
 }
