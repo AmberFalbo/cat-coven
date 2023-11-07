@@ -8,6 +8,7 @@ actor Client
 participant MewMewMaterielsClient
 box "MewMewMaterials Service" #LightBlue
     participant MewMewMaterialsService
+    participant MewMewMaterialsValidator
     participant MewMewMaterialsProcessor
     participant MewMewMaterialsRepository
 end box
@@ -17,72 +18,93 @@ database Database
 
 Client -> MewMewMaterielsClient : AddMaterials(reagents)
 MewMewMaterielsClient -> MewMewMaterialsService : AddMaterials(requestContract)
+
 alt
-    MewMewMaterialsService -> MewMewMaterialsProcessor : AddMaterials(reagents)
-    MewMewMaterialsProcessor -> MewMewMaterialsRepository : AddMaterials(cache)
-    MewMewMaterialsRepository -> Database : cache
+    MewMewMaterialsService -> MewMewMaterialsValidator : Validate(requestContract)
     alt
-        Database -> MewMewMaterialsRepository : success
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : created cache
-        MewMewMaterialsProcessor -> MewMewMaterialsService : created cache
-        MewMewMaterialsService -> MewMewMaterielsClient : created cache
-        MewMewMaterielsClient -> Client : created cache
-    else #FFA6A6 failure
-        Database -> MewMewMaterialsRepository : failure
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
-        MewMewMaterialsProcessor -> MewMewMaterialsService : failure
-    end 
-else #FFA6A6 failure
-    MewMewMaterialsService -> MewMewMaterielsClient : failure
-    MewMewMaterielsClient -> Client : failure
+        MewMewMaterialsService -> MewMewMaterialsProcessor : AddMaterials(reagents)
+        MewMewMaterialsProcessor -> MewMewMaterialsRepository : AddMaterials(cache)
+        MewMewMaterialsRepository -> Database : cache
+        alt
+            Database -> MewMewMaterialsRepository : success
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : created cache
+            MewMewMaterialsProcessor -> MewMewMaterialsService : created cache
+            MewMewMaterialsService -> MewMewMaterielsClient : created cache
+            MewMewMaterielsClient -> Client : created cache
+        else #FFA6A6 internal failure
+            Database -> MewMewMaterialsRepository : failure
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
+            MewMewMaterialsProcessor -> MewMewMaterialsService : failure
+        end 
+    else #FFA6A6 internal failure
+        MewMewMaterialsService -> MewMewMaterielsClient : failure
+        MewMewMaterielsClient -> Client : failure
+    end
+else #FFA6A6 invalid argument
+    MewMewMaterialsService -> MewMewMaterielsClient : InvalidArgument
+    MewMewMaterielsClient -> Client : InvalidArgument
 end
 
 ==Get Cache==
 
 Client -> MewMewMaterielsClient : GetCache(reagentsRequest)
 MewMewMaterielsClient -> MewMewMaterialsService : GetCache(requestContract)
+
 alt
-    MewMewMaterialsService -> MewMewMaterialsProcessor : GetCache(reagentsRequest)
-    MewMewMaterialsProcessor -> MewMewMaterialsRepository : GetCache(cache id)
-    MewMewMaterialsRepository -> Database : cache id
+    MewMewMaterialsService -> MewMewMaterialsValidator : Validate(requestContract)
     alt
-        Database -> MewMewMaterialsRepository : success
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
-        MewMewMaterialsProcessor -> MewMewMaterialsService : cache
-        MewMewMaterialsService -> MewMewMaterielsClient : cache
-        MewMewMaterielsClient -> Client : cache
+        MewMewMaterialsService -> MewMewMaterialsProcessor : GetCache(reagentsRequest)
+        MewMewMaterialsProcessor -> MewMewMaterialsRepository : GetCache(cache id)
+        MewMewMaterialsRepository -> Database : cache id
+        alt
+            Database -> MewMewMaterialsRepository : success
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
+            MewMewMaterialsProcessor -> MewMewMaterialsService : cache
+            MewMewMaterialsService -> MewMewMaterielsClient : cache
+            MewMewMaterielsClient -> Client : cache
+        else #FFA6A6 failure
+            Database -> MewMewMaterialsRepository : failure
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
+            MewMewMaterialsProcessor -> MewMewMaterialsService : failure
+        end 
     else #FFA6A6 failure
-        Database -> MewMewMaterialsRepository : failure
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
-        MewMewMaterialsProcessor -> MewMewMaterialsService : failure
-    end 
-else #FFA6A6 failure
-    MewMewMaterialsService -> MewMewMaterielsClient : failure
-    MewMewMaterielsClient -> Client : failure
+        MewMewMaterialsService -> MewMewMaterielsClient : failure
+        MewMewMaterielsClient -> Client : failure
+    end
+else #FFA6A6 invalid argument
+    MewMewMaterialsService -> MewMewMaterielsClient : InvalidArgument
+    MewMewMaterielsClient -> Client : InvalidArgument
 end
 
 ==Update Cache==
 
 Client -> MewMewMaterielsClient : UpdateCache(cache)
 MewMewMaterielsClient -> MewMewMaterialsService : UpdateCache(requestContract)
+
 alt
-    MewMewMaterialsService -> MewMewMaterialsProcessor : UpdateCache(cache)
-    MewMewMaterialsProcessor -> MewMewMaterialsRepository : UpdateCache(cache)
-    MewMewMaterialsRepository -> Database : cache
+    MewMewMaterialsService -> MewMewMaterialsValidator : Validate(requestContract)
     alt
-        Database -> MewMewMaterialsRepository : success
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
-        MewMewMaterialsProcessor -> MewMewMaterialsService : cache
-        MewMewMaterialsService -> MewMewMaterielsClient : cache
-        MewMewMaterielsClient -> Client : cache
+        MewMewMaterialsService -> MewMewMaterialsProcessor : UpdateCache(cache)
+        MewMewMaterialsProcessor -> MewMewMaterialsRepository : UpdateCache(cache)
+        MewMewMaterialsRepository -> Database : cache
+        alt
+            Database -> MewMewMaterialsRepository : success
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : cache
+            MewMewMaterialsProcessor -> MewMewMaterialsService : cache
+            MewMewMaterialsService -> MewMewMaterielsClient : cache
+            MewMewMaterielsClient -> Client : cache
+        else #FFA6A6 failure
+            Database -> MewMewMaterialsRepository : failure
+            MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
+            MewMewMaterialsProcessor -> MewMewMaterialsService : failure
+        end 
     else #FFA6A6 failure
-        Database -> MewMewMaterialsRepository : failure
-        MewMewMaterialsRepository -> MewMewMaterialsProcessor : failure
-        MewMewMaterialsProcessor -> MewMewMaterialsService : failure
-    end 
-else #FFA6A6 failure
-    MewMewMaterialsService -> MewMewMaterielsClient : failure
-    MewMewMaterielsClient -> Client : failure
+        MewMewMaterialsService -> MewMewMaterielsClient : failure
+        MewMewMaterielsClient -> Client : failure
+    end
+else #FFA6A6 invalid argument
+    MewMewMaterialsService -> MewMewMaterielsClient : InvalidArgument
+    MewMewMaterielsClient -> Client : InvalidArgument
 end
 
 @enduml
