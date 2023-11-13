@@ -1,6 +1,30 @@
 # MewMewMaterials API Contracts
 
-## MewMewResponseContract
+## Request Contracts
+
+### MewMewDepositContract
+
+| property | type | description | required |
+| - | - | - | - |
+| meowMage | `MeowMageContract` | The mage making the deposit | `true` |
+| reagentName | `string` | The reagent name | `true` |
+| quantity | `int` | Quantity of the reagent to be deposited | `true` |
+
+### MewMewGetCacheContract
+
+| property | type | description | required |
+| - | - | - | - |
+| meowMageId | `string` | The unique id of the mage cache owner | `true` |
+
+### MewMewUpdateCacheContract
+
+| property | type | description | required |
+| - | - | - | - |
+| cache | `CacheContract` | The cache to be updated | `true` |
+
+## Response Contract
+
+### MewMewResponseContract
 
 | property | type | description | required |
 | - | - | - | - |
@@ -26,6 +50,8 @@
 
 ### ReagentsContract
 
+| property | type | description | required |
+| - | - | - | - |
 | id | `string` | unique reagent id, string from guid | `true` |
 | name | `string` | The reagent's name | `true` |
 | quantity | `int` | Quantity of the reagent | `true` |
