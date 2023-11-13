@@ -32,6 +32,8 @@
 | cache | `CacheContract` | The cache contract contains materials data | `true` |
 | message | `string` | Optional response message | `false` |
 
+## Inner Contracts
+
 ### CacheContract
 
 | property | type | description | required |
