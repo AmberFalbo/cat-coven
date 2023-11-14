@@ -4,6 +4,18 @@
 
 ### MewMewDepositContract
 
+```json
+{
+    "meowMage": {
+        "id": "51c6b47c-d4f2-4510-996c-b1315044db5c",
+        "name": "Spaceloafs the Handsome",
+        "flavorText": "The most Hamsome loaf in the land."
+    },
+    "reagentName": "catnip",
+    "quantity": 5
+}
+```
+
 | property | type | description | required |
 | - | - | - | - |
 | meowMage | `MeowMageContract` | The mage making the deposit | `true` |
@@ -12,11 +24,38 @@
 
 ### MewMewGetCacheContract
 
+```json
+{
+    "meowMageId": "51c6b47c-d4f2-4510-996c-b1315044db5c"
+}
+```
+
 | property | type | description | required |
 | - | - | - | - |
 | meowMageId | `string` | The unique id of the mage cache owner | `true` |
 
 ### MewMewUpdateCacheContract
+
+```json
+{
+    "cache": {
+        "id": "4864bcc7-8723-4358-bf8f-bd743208cfe5",
+        "meowMage": {
+            "id": "51c6b47c-d4f2-4510-996c-b1315044db5c",
+            "name": "Spaceloafs the Handsome",
+            "flavorText": "The most Hamsome loaf in the land."
+        },
+        "reagents": [
+            {
+                "id": "a581f910-8872-4d26-b958-bc547bd6e53a",
+                "name": "catnip",
+                "quantity": "5",
+                "flavorText": "Wanna get high?"
+            }
+        ]
+    }
+}
+```
 
 | property | type | description | required |
 | - | - | - | - |
@@ -25,6 +64,29 @@
 ## Response Contract
 
 ### MewMewResponseContract
+
+```json
+{
+    "statusCode": "Success",
+    "cache": {
+        "id": "4864bcc7-8723-4358-bf8f-bd743208cfe5",
+        "meowMage": {
+            "id": "51c6b47c-d4f2-4510-996c-b1315044db5c",
+            "name": "Spaceloafs the Handsome",
+            "flavorText": "The most Hamsome loaf in the land."
+        },
+        "reagents": [
+            {
+                "id": "a581f910-8872-4d26-b958-bc547bd6e53a",
+                "name": "catnip",
+                "quantity": "5",
+                "flavorText": "Wanna get high?"
+            }
+        ]
+    },
+    "message": "Successfully added 5 catnip to Spaceloaf's cache."
+}
+```
 
 | property | type | description | required |
 | - | - | - | - |
